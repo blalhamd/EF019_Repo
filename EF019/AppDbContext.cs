@@ -13,7 +13,7 @@ namespace EF019
         {
             base.OnConfiguring(optionsBuilder);
 
-            var config = new ConfigurationBuilder().AddJsonFile("C:\\Users\\DELL\\Desktop\\Revision\\EF019\\EF019\\AppSetting.json").Build();
+            var config = new ConfigurationBuilder().AddJsonFile("AppSetting.json").Build();
             var connection = config.GetSection("ConnectionString").Value;
             
             optionsBuilder.UseSqlServer(connection);
