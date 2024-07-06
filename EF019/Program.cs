@@ -13,14 +13,10 @@ internal class Program
 
         using(var context = new AppDbContext())
         {
-            var query = context.Clients.FirstOrDefault(x=> x.Id == 2);
+            var client = context.Clients.FirstOrDefault(x=> x.Id == 2);
 
-            //query.Name = "Amira Abd El Aziez";
-            //query.IsDeleted = false;
-            //query.dateTime = null;
-            //context.Clients.Update(query);
-            //context.SaveChanges();
-            Console.WriteLine(query.Name);
+            Console.WriteLine($"Name: {client.Name}");
+
             Console.WriteLine("Success");
             
         }
