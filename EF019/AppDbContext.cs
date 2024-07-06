@@ -25,8 +25,7 @@ namespace EF019
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Client>().ToTable("Clients").HasKey(x=> x.Id);
-            modelBuilder.Entity<Client>().HasQueryFilter(x => x.IsDeleted == false);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         }
     }
 
